@@ -40,7 +40,7 @@ func ExampleAvg() {
 
 	fmt.Println(result)
 
-	// Output: 10
+	// Output: 13
 }
 
 func ExampleTotalInCategory() {
@@ -50,7 +50,7 @@ func ExampleTotalInCategory() {
 			ID:       123,
 			Amount:   10,
 			Category: "food",
-			Status: types.StatusFail,
+			Status: types.StatusOk,
 		},
 		{
 			ID:       124,
@@ -76,5 +76,5 @@ func ExampleTotalInCategory() {
 
 	fmt.Println(result)
 
-	// Output: 10
+	// Output: 20
 }
