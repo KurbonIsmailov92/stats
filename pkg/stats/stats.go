@@ -1,6 +1,8 @@
 package stats
 
 import (
+	"log"
+
 	"github.com/KurbonIsmailov92/bank/v2/pkg/types"
 )
 
@@ -34,6 +36,6 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 			sum += payment.Amount
 		}
 	}
-
+	log.Print(sum)
 	return sum
 }
