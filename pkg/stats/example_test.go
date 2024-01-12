@@ -10,33 +10,33 @@ func ExampleAvg() {
 
 	payments := []types.Payment{
 		{
-			ID: 123,
-			Amount: 10,
+			ID:       123,
+			Amount:   10,
 			Category: "food",
-			Status: types.StatusOk,
+			Status:   types.StatusOk,
 		},
 		{
-			ID: 124,
-			Amount: 20,
+			ID:       124,
+			Amount:   20,
 			Category: "tax",
-			Status: types.StatusOk,
+			Status:   types.StatusOk,
 		},
 		{
-			ID: 125,
-			Amount: 15,
-			Category: "car",
-			Status: types.StatusFail,
-		},
-		{
-			ID: 126,
-			Amount: 10,
-			Category: "food",
-			Status: types.StatusOk,
-		},
 
+			ID:       125,
+			Amount:   15,
+			Category: "car",
+			Status:   types.StatusFail,
+		},
+		{
+			ID:       126,
+			Amount:   10,
+			Category: "food",
+			Status:   types.StatusOk,
+		},
 	}
 
-	result:= Avg(payments)
+	result := Avg(payments)
 
 	fmt.Println(result)
 
@@ -50,25 +50,25 @@ func ExampleTotalInCategory() {
 			ID:       123,
 			Amount:   10,
 			Category: "food",
-			Status: types.StatusOk,
+			Status:   types.StatusOk,
 		},
 		{
 			ID:       124,
 			Amount:   20,
 			Category: "tax",
-			Status: types.StatusInProgress,
+			Status:   types.StatusInProgress,
 		},
 		{
 			ID:       125,
 			Amount:   15,
 			Category: "car",
-			Status: types.StatusOk,
+			Status:   types.StatusOk,
 		},
 		{
 			ID:       126,
 			Amount:   10,
 			Category: "food",
-			Status: types.StatusOk,
+			Status:   types.StatusOk,
 		},
 	}
 
