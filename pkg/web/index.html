@@ -3,9 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Разделение счета</title>
 </head>
 <body>
-    
+    <h2>Введите информацию для программы разделения счета</h2>
+
+    <form action="/split-bill" method="post">
+        <label for="numberOfPeople">Количество людей:</label>
+        <input type="number" id="numberOfPeople" name="numberOfPeople" required><br>
+
+        <!-- Индивидуальные блюда -->
+        <fieldset>
+            <legend>Индивидуальные блюда и их цены</legend>
+            <div id="individualItems"></div>
+            <button type="button" onclick="addIndividualItem()">Добавить индивидуальное блюдо</button>
+        </fieldset>
+
+        <!-- Общие блюда -->
+        <fieldset>
+            <legend>Общие блюда и их общая стоимость</legend>
+            <div id="sharedItems"></div>
+            <button type="button" onclick="addSharedItem()">Добавить общее блюдо</button>
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Рассчитать">
+    </form>
+
+    <script>
+        function addIndividualItem() {
+            const container = document.getElementById("individualItems");
+            const count = container.children.length + 1;
+
+            const itemLabel = document.createElement("label");
+            itemLabel.textContent = `Индивидуальное блюдо ${count}:`;
+
+            const itemNameInput = document.createElement("input");
+            itemNameInput.type = "text";
+            itemNameInput.name = `individualItemNames${count}`;
+            itemNameInput.required = true;
+
+            const itemPriceLabel = document.createElement("label");
+            itemPriceLabel.textContent = "Цена:";
+
+            const itemPriceInput = document.createElement("input");
+            itemPriceInput.type = "number";
+            itemPriceInput.step = "0.01";
+            itemPriceInput.name = `individualItemPrices${count}`;
+            itemPriceInput.required = true;
+
+            container.appendChild(itemLabel);
+            container.appendChild(itemNameInput);
+            container.appendChild(document.createElement("br"));
+            container.appendChild(itemPriceLabel);
+            container.appendChild(itemPriceInput);
+            container.appendChild(document.createElement("br"));
+        }
+
+        function addSharedItem() {
+            const container = document.getElementById("sharedItems");
+            const count = container.children.length + 1;
+
+            const itemLabel = document.createElement("label");
+            itemLabel.textContent = `Общее блюдо ${count}:`;
+
+            const itemNameInput = document.createElement("input");
+            itemNameInput.type = "text";
+            itemNameInput.name = `sharedItemNames${count}`;
+            itemNameInput.required = true;
+
+            const itemPriceLabel = document.createElement("label");
+            itemPriceLabel.textContent = "Цена:";
+
+            const itemPriceInput = document.createElement("input");
+            itemPriceInput.type = "number";
+            itemPriceInput.step = "0.01";
+            itemPriceInput.name = `sharedItemPrices${count}`;
+            itemPriceInput.required = true;
+
+            container.appendChild(itemLabel);
+            container.appendChild(itemNameInput);
+            container.appendChild(document.createElement("br"));
+            container.appendChild(itemPriceLabel);
+            container.appendChild(itemPriceInput);
+            container.appendChild(document.createElement("br"));
+        }
+    </script>
 </body>
 </html>
